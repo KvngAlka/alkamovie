@@ -6,7 +6,12 @@
 
 
     let isDarkTheme = false;
-    const toggleTheme = ()=> isDarkTheme = !isDarkTheme;
+    const toggleTheme = ()=> {
+        isDarkTheme = !isDarkTheme
+        document.querySelector('body')?.classList.toggle('dark')
+    };
+
+ 
 </script>
 
 

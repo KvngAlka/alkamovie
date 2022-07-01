@@ -48,10 +48,11 @@
 <div class="search_top">
     <Logo/>
 </div>
+
 <div class="search_cont">
-    <div class="go_back" on:click={()=> goto('/')}>
+    <!-- <div class="go_back" on:click={()=> goto('/')}>
         <Icon src={ArrowLeft} size={'1.2rem'} />
-    </div>
+    </div> -->
     <div class="search_field">
         <input bind:value={searchValue} type="text"  on:submit={handleSearch} placeholder="Search movie...">
         <div class="search_btn" on:click={handleSearch}><Icon  src = {Search} size = {"1.2rem"} /></div>
@@ -78,7 +79,7 @@
     .movies_cont{
         padding: 3rem 1rem;
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
         gap : 1.5rem;
         background-color: var(--bg2);
     }
@@ -94,18 +95,21 @@
 
     .search_cont{
         flex: 1;
-        display: flex;
+        display: grid;
+        grid-template-columns: auto 1fr;
         align-items: center;
-        gap: 2rem;
+        justify-content: center;
+        gap: 1rem;
         position: sticky;
-        padding: 2rem;
+        padding: 1rem;
         top: 0;
         background-color: var(--bg1);
         z-index: 9;
     }
-    .go_back{
+    /* .go_back{
         cursor: pointer;
-    }
+        color: var(--text);
+    } */
 
     .search_field{
         display: flex;
@@ -114,11 +118,13 @@
         flex: 1;
         background-color: var(--bg2);
         border-radius: 1rem;
+        color: var(--text);
     }
 
     .search_field input{
         flex: 1;
         background: transparent;
+        color: var(--text);
         
     }
 

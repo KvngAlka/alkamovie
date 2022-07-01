@@ -24,7 +24,7 @@
 
 <style>
     .movie_card{
-        background-color: white;
+        background-color: var(--bg1);
         height: 30rem;
         position: relative;
         overflow: hidden;
@@ -45,6 +45,7 @@
     .details{
         padding: 1rem;
         overflow: hidden;
+        color: var(--text);
     }
 
     .title{

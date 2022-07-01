@@ -34,7 +34,7 @@
         width: 100%;
         height: auto;
         overflow: hidden;
-        background-color: var(--white);
+        background-color: var(--bg1);
         display: flex;
         flex-direction: column;
         border-bottom: 0.1rem solid var(--black10);
@@ -43,6 +43,7 @@
         z-index: 8;
         transition: ease 0.3s;
         -webkit-transition: ease 0.3s;
+        color: var(--text);
     }
 
     

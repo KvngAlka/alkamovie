@@ -21,9 +21,9 @@
     <Logo/>
 </div>
 <div class="search_cont">
-    <div class="go_back" on:click={()=> goto('/')}>
+    <!-- <div class="go_back" on:click={()=> goto('/')}>
         <Icon src={ArrowLeft} size={'1.2rem'} />
-    </div>
+    </div> -->
     <div class="search_field">
         <input bind:value={searchValue} type="text"  on:submit={handleSearch} placeholder="Search movie...">
         <div class="search_btn" on:click={handleSearch}><Icon  src = {Search} size = {"1.2rem"} /></div>
@@ -63,9 +63,9 @@
         background-color: var(--bg1);
         z-index: 9;
     }
-    .go_back{
+    /* .go_back{
         cursor: pointer;
-    }
+    } */
 
     .search_field{
         display: flex;
@@ -79,11 +79,13 @@
     .search_field input{
         flex: 1;
         background: transparent;
+        color: var(--text);
         
     }
 
     .search_btn{
         cursor: pointer;
+        color: var(--text);
     }
 
     .search_index{

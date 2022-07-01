@@ -15,8 +15,8 @@
 :root{
 
     --black : black;
-    --black10 : rgba(0, 0, 0, 0.103);
-    --black80 : rgba(0, 0, 0, 0.800);
+    --black10 : rgb(177, 177, 177);
+    --black80 : rgb(37, 37, 37);
 
 
     --white : white;

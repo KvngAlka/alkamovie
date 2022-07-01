@@ -27,6 +27,7 @@
 
     import CatNavs from "../components/CatNavs.svelte";
     import MovieCard from "../components/MovieCard.svelte"
+    import {fly} from 'svelte/transition'
 
 
     export let movies = []
@@ -39,55 +40,11 @@
         description : movie.overview
     }))
 
-    // let url = `https://image.cnbcfm.com/api/v1/image/105773423-1551716977818rtx6p9yw.jpg?v=1551717428`
-    // $ : movies = [
-    //     {
-    //         id : 43423,
-    //         img : url, 
-    //         title : "original Title",
-    //         description : 'This is the movie description uv been waiting for'
-    //     },
-    //     {
-    //         id : 43422,
-    //         img : url, 
-    //         title : "original Title",
-    //         description : 'This is the movie description uv been waiting for'
-    //     },
-    //     {
-    //         id : 43427,
-    //         img : url, 
-    //         title : "original Title",
-    //         description : 'This is the movie description uv been waiting for'
-    //     },
-    //     {
-    //         id : 434277,
-    //         img : url, 
-    //         title : "original Title",
-    //         description : 'This is the movie description uv been waiting for'
-    //     },
-    //     {
-    //         id : 4342756,
-    //         img : url, 
-    //         title : "original Title",
-    //         description : 'This is the movie description uv been waiting for'
-    //     },
-    //     {
-    //         id : 434278,
-    //         img : url, 
-    //         title : "original Title",
-    //         description : 'This is the movie description uv been waiting for'
-    //     },
-    //     {
-    //         id : 43427234,
-    //         img : url, 
-    //         title : "original Title",
-    //         description : 'This is the movie description uv been waiting for'
-    //     },
-    // ]
+
 </script>
 
 <CatNavs/>
-<div class="home">
+<div class="home" in:fly>
     <h1 class="movies_cat_title">Popular Movies</h1>
     <div class="movies_cont">
         {#each movies as  movie  (movie.id)}
@@ -102,15 +59,17 @@
     .home{
         width: 100%;
         padding: 1rem;
+        background-color: var(--bg2);
     }
 
     .movies_cat_title{
         padding: 1rem 0rem;
+        color: var(--text);
     }
 
     .movies_cont{
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
         gap : 1.5rem
     }
 </style>

@@ -44,6 +44,7 @@
         gap: 1rem;
         z-index: 9;
         padding: 1rem;
+        color: var(--text);
         border-bottom: 0.1rem solid var(--black10);
         /* box-shadow:  0 10px 20px -7px rgba(0, 0, 0, 0.07); */
     }   
@@ -63,6 +64,8 @@
         flex: 1;
         width: auto;
         min-width: 10rem;
+        background: transparent;
+        color: var(--text);
     }
 
     .search_btn{

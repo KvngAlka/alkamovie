@@ -42,8 +42,8 @@
 <div class="movie_detail"  >
     <SideNavbar/>
     <div class="movie_detail_body" in:scale out:fade>
-
-        <div class="movie_wall" style="background : url({`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`});
+        
+        <div class="movie_wall" style="background-image : url({`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`});
         background-repeat: no-repeat;background-size: cover;background-position: center;"> 
         </div>
 
@@ -102,6 +102,7 @@
 <style>
     .movie_detail{
         display: flex;
+        flex-direction: column;
         background-color: var(--bg1);
     }
 
@@ -122,8 +123,9 @@
     .details{
         display: grid;
         grid-template-columns: 1fr;
-        padding: 4rem 2rem;
+        padding: 3rem 1rem;
         gap: 1rem;
+        color: var(--text);
     }
 
     .details img{
@@ -208,8 +210,13 @@
 
 
     @media (min-width: 768px){
+        .movie_detail{
+            flex-direction: row;
+        }
+
         .details{
             grid-template-columns: auto 1fr;
+            padding: 4rem 2rem;
         }
     }
 
