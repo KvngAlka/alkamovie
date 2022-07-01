@@ -3,6 +3,11 @@
 
     let userInput = ""
 
+
+    $ : {
+        document.title = "Alka Movies - About"
+    }
+
 </script>
 
 

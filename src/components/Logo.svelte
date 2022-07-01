@@ -1,11 +1,11 @@
 
 <script>
-    export let size = 0;
+    export let size = '';
     import {goto} from '$app/navigation'
 </script>
 
 
-<div class="logo" on:click={()=>goto('/')} width = {`${size}rem`} height = {`${size}rem`} style="boder-radius : {size/5}">
+<div class="logo" on:click={()=>goto('/')}  height = {size ? `${size}rem` : '3rem'} style="boder-radius : {10}; width : {size ? `${size}rem` : '3rem'};height : {size ? `${size}rem` : '3rem'}">
     <h1>A</h1>
 </div>
 
@@ -13,12 +13,14 @@
     .logo{
         background-color: white;
         color: black;
-        height: 3rem;
-        width: 3rem;
         border-radius: 0.5rem;
         display: grid;
         place-items: center;
         border: 0.1rem solid black;
         cursor: pointer;
+    }
+
+    .logo h1{
+        font-size: 1rem;
     }
 </style>

@@ -25,6 +25,7 @@
 
 <style>
     .nav_tile{
+        width: 100%;
         padding: 1rem;
         cursor: pointer;
         display: flex;
@@ -34,7 +35,7 @@
     }
 
     .nav_tile_active{
-        border-left: 0.3rem solid var(--white);
+        border-bottom: 0.3rem solid var(--white);
         background-color: rgb(27, 27, 27);
     }
     .nav_tile a{
@@ -48,6 +49,14 @@
 
     .nav_tile:hover{
         background-color: rgb(27, 27, 27);
+    }
+
+
+    @media (min-width : 768px){
+        .nav_tile_active{
+            border-bottom: none;
+            border-left: 0.3rem solid var(--white);
+        }
     }
 
 </style>

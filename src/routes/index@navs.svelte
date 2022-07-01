@@ -30,6 +30,7 @@
 
 
     export let movies = []
+   
 
     $ : movies = movies.map(movie => ({
         id : movie.id,
@@ -38,7 +39,51 @@
         description : movie.overview
     }))
 
-    console.log(movies)
+    // let url = `https://image.cnbcfm.com/api/v1/image/105773423-1551716977818rtx6p9yw.jpg?v=1551717428`
+    // $ : movies = [
+    //     {
+    //         id : 43423,
+    //         img : url, 
+    //         title : "original Title",
+    //         description : 'This is the movie description uv been waiting for'
+    //     },
+    //     {
+    //         id : 43422,
+    //         img : url, 
+    //         title : "original Title",
+    //         description : 'This is the movie description uv been waiting for'
+    //     },
+    //     {
+    //         id : 43427,
+    //         img : url, 
+    //         title : "original Title",
+    //         description : 'This is the movie description uv been waiting for'
+    //     },
+    //     {
+    //         id : 434277,
+    //         img : url, 
+    //         title : "original Title",
+    //         description : 'This is the movie description uv been waiting for'
+    //     },
+    //     {
+    //         id : 4342756,
+    //         img : url, 
+    //         title : "original Title",
+    //         description : 'This is the movie description uv been waiting for'
+    //     },
+    //     {
+    //         id : 434278,
+    //         img : url, 
+    //         title : "original Title",
+    //         description : 'This is the movie description uv been waiting for'
+    //     },
+    //     {
+    //         id : 43427234,
+    //         img : url, 
+    //         title : "original Title",
+    //         description : 'This is the movie description uv been waiting for'
+    //     },
+    // ]
 </script>
 
 <CatNavs/>

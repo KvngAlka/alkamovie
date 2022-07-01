@@ -13,6 +13,11 @@ import {slide, fade} from 'svelte/transition'
         console.log("Username: ",userData.username);
         console.log("Password", userData.password)
     }
+
+
+    $ : {
+        document.title = "Alka Movies - Signin"
+    }
 </script>
 
 
@@ -27,7 +32,6 @@ import {slide, fade} from 'svelte/transition'
         <input type="submit" value="Login">
     </form>
 
-    <a href="/">Home</a>
 
 </div>
 
@@ -39,7 +43,7 @@ import {slide, fade} from 'svelte/transition'
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: var(--bg2);
+        background-color: var(--bg1);
     }
 
     .logo_cont{
@@ -56,7 +60,7 @@ import {slide, fade} from 'svelte/transition'
         padding: 2rem;
         display: flex;
         flex-direction: column;
-        border-radius: 1rem;
+        
     }
 
     form input{
@@ -77,6 +81,16 @@ import {slide, fade} from 'svelte/transition'
         background-color: var(--bgPrimary);
         color: var(--white);
         cursor: pointer;
+    }
+
+    @media (min-width: 768px){
+        .signin{
+            background-color: var(--bg2);
+        }
+
+        form{
+            border-radius: 1rem;
+        }
     }
 
 

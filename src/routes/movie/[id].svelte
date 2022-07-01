@@ -6,8 +6,8 @@
     export async function load({fetch,params}){
         const id = params.id;
         const  url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
-        const res = await fetch(url);
-        const data = await res.json();
+        const res = await fetch(url).catch(err=> console.log(err));
+        const data = await res.json().catch(err => console.log("Error Fetching Data"));
         console.log(data)
 
         if(res.ok){
@@ -36,10 +36,6 @@
     let genres = movieDetails.genres ? movieDetails.genres : [];
     let productionCompanies = movieDetails.production_companies ? movieDetails.production_companies : []
 
-
-    console.log("Movie details", movieDetails)
-
-    let wall = `https://i0.wp.com/tvregular.com/wp-content/uploads/2022/02/The-Blacklist-NBC.jpg`
 </script>
 
 

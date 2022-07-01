@@ -9,6 +9,7 @@
     outline: none;
     border: none;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 :root{
@@ -16,6 +17,7 @@
     --black : black;
     --black10 : rgba(0, 0, 0, 0.103);
     --black80 : rgba(0, 0, 0, 0.800);
+
 
     --white : white;
     --gray10 : rgb(240, 240, 240);
@@ -30,14 +32,26 @@
 }
 
 body{
-    background-color: rgb(228, 228, 228);
+    background-color: var(--bg2);
+    width: 100%;
+    overflow-x: hidden;
+
+
+
 }
 
 ::-webkit-scrollbar{
     width: 0.6rem;
-    background-color: white;
+    background-color: var(--bg1);
 }
 
 ::-webkit-scrollbar-thumb{
     background-color: black;
+}
+
+
+.dark{
+    --text : var(--white);
+    --bg1 : var(--black80);
+    --bg2 : var(--black)
 }
