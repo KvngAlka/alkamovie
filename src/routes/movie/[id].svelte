@@ -55,6 +55,10 @@
 </script>
 
 
+<svelte:head>
+    <title>Alka Movies - {movieDetails.original_title}</title>
+</svelte:head>
+
 <div class="movie_detail"  >
     <SideNavbar/>
     <div class="movie_detail_body" in:scale out:fade>

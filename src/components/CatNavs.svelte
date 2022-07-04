@@ -1,10 +1,18 @@
 <script>
-    import {Icon, ChevronDown, ChevronUp} from 'svelte-hero-icons'
+// @ts-nocheck
+
+    import {Icon, ChevronDown, ChevronUp} from 'svelte-hero-icons';
+    import {createEventDispatcher} from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
+    const handleClick = (title)=> dispatch("display_movies", title);
+
     let catNavObjs = [
-        {title : 'Popular Movies', url : ''},
-        {title : 'Latest Movies', url : ''},
+        {title : 'Popular Movies', url : 'popular'},
+        {title : 'Latest Movies', url : 'latest'},
         {title : 'Movies', url : ''},
-        {title : "Top Rated"}
+        {title : "Top Rated", url : 'top_rated'}
     ]
 
     export let isActive = false;
@@ -21,7 +29,7 @@
     </div>
     <div class="cat_navs_cont {catNavActive && 'cat_navs_cont_active'} ">
         {#each catNavObjs as catNavObj }
-            <h4 class="{isActive ? 'active' : ''}">
+            <h4 class="{isActive ? 'active' : ''}"  on:click={()=> handleClick(catNavObj.url)}>
                 {catNavObj.title}
             </h4>
         {/each}
