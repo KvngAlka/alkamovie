@@ -37,11 +37,13 @@
         height: 4rem;
         position: sticky;
         top: 0;
-        background-color: var(--bgPrimary);
+        background-color: var(--bg1);
         display: flex;
         gap: 0.4rem;
-        color: var(--white);
+        color: var(--text);
         z-index: 10;
+        border-bottom: 0.02rem solid var(--border);
+        
     }
 
     .top{
@@ -68,6 +70,9 @@
             top: 0;
             flex-direction: column;
             z-index: 10;
+
+            border-right: 0.02rem solid var(--border);
+            border-bottom: none;
         }
         .top{
             display: flex;

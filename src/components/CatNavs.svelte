@@ -37,7 +37,7 @@
         background-color: var(--bg1);
         display: flex;
         flex-direction: column;
-        border-bottom: 0.1rem solid var(--black10);
+        border-bottom: 0.1rem solid var(--border);
         position: sticky;
         top: 8rem;
         z-index: 8;

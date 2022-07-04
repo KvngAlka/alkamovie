@@ -82,6 +82,7 @@
         grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
         gap : 1.5rem;
         background-color: var(--bg2);
+        margin: auto;
     }
 
     .search_top{
@@ -96,7 +97,7 @@
     .search_cont{
         flex: 1;
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 1fr;
         align-items: center;
         justify-content: center;
         gap: 1rem;
@@ -131,4 +132,7 @@
     .search_btn{
         cursor: pointer;
     }
+
+
+
 </style>

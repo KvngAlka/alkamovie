@@ -16,7 +16,7 @@
 
     --black : black;
     --black10 : rgb(177, 177, 177);
-    --black80 : rgb(37, 37, 37);
+    --black80 : rgb(24, 24, 24);
 
 
     --white : white;
@@ -24,11 +24,13 @@
 
     --primaryColor : var(--black);
     --bgPrimary : var(--primaryColor);
+
     --bg1 : var(--white);
     --bg2 : var(--gray10);
 
 
-    --text : var(--black)
+    --text : var(--black);
+    --border : var(--gray10);
 }
 
 body{
@@ -53,5 +55,6 @@ body{
 .dark{
     --text : var(--white);
     --bg1 : var(--black80);
-    --bg2 : var(--black)
+    --bg2 : var(--black);
+    --border : none;
 }

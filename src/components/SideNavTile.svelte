@@ -35,8 +35,8 @@
     }
 
     .nav_tile_active{
-        border-bottom: 0.3rem solid var(--white);
-        background-color: rgb(27, 27, 27);
+        border-bottom: 0.3rem solid var(--text);
+        background-color: var(--text) 0.5;
     }
     .nav_tile a{
         width: 100%;
@@ -44,18 +44,18 @@
         display: grid;
         place-items: center;
         text-decoration: none;
-        color: var(--white);
+        color: var(--text);
     }
 
     .nav_tile:hover{
-        background-color: rgb(27, 27, 27);
+        background-color: rgba(221, 221, 221, 0.315) ;
     }
 
 
     @media (min-width : 768px){
         .nav_tile_active{
             border-bottom: none;
-            border-left: 0.3rem solid var(--white);
+            border-left: 0.3rem solid var(--text);
         }
     }
 

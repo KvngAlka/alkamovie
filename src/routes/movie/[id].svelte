@@ -8,12 +8,18 @@
         const  url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`;
         const res = await fetch(url).catch(err=> console.log(err));
         const data = await res.json().catch(err => console.log("Error Fetching Data"));
+
+        const url2 = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`;
+        const res2 = await fetch(url2);
+        const data2 = await res2.json();
+
         console.log(data)
 
         if(res.ok){
             return {
                 props : {
-                    movieDetails : data
+                    movieDetails : data,
+                    similarMovies : data2.results
                 } 
             }
         }
@@ -29,12 +35,22 @@
     import SideNavbar from "../../components/SideNavbar.svelte";
     import {Icon , Play} from 'svelte-hero-icons'
     import {fade, scale} from 'svelte/transition'
+    import MovieCard from "../../components/MovieCard.svelte";
 
     export let movieDetails = {};
-
+    export let similarMovies = [];
 
     let genres = movieDetails.genres ? movieDetails.genres : [];
-    let productionCompanies = movieDetails.production_companies ? movieDetails.production_companies : []
+    let productionCompanies = movieDetails.production_companies ? movieDetails.production_companies : [];
+
+    console.log(similarMovies)
+
+    $ : similarMovies = similarMovies.map(movie => ({
+        id : movie.id,
+        img : `https://image.tmdb.org/t/p/w500${movie.poster_path}`, 
+        title : movie.original_title,
+        description : movie.overview
+    }))
 
 </script>
 
@@ -93,6 +109,17 @@
 
             </div>
 
+        </div>
+
+
+        <div class="similar_movies">
+            <h1>Similar Movies</h1>
+            <div class="movies_cont">
+                {#each similarMovies as similarMovie (similarMovie.id) }
+                    <MovieCard imgUrl = {similarMovie.img} title={similarMovie.title} description = {similarMovie.description} id = {similarMovie.id}/>
+                {/each}
+            </div>
+            
         </div>
 
     </div>
@@ -207,6 +234,20 @@
         gap: 0.5rem;
     }
     .c_country span{font-weight: bold;}
+
+
+    .similar_movies{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .movies_cont{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+        gap : 1.5rem;
+        margin: auto;
+    }
 
 
     @media (min-width: 768px){
