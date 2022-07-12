@@ -8,10 +8,12 @@
     export let title = '' ;
     export let description = '';
     export let imgUrl = '';
+
+    
 </script>
 
 
-<div class="movie_card">
+<div class="movie_card" on:click={()=> window.open(`/movie/${id}`)}>
     <img src={imgUrl} alt="movie_pic">
     <div class="details">
         <h4 class="title">{title}</h4>
@@ -31,7 +33,12 @@
         display: flex;
         flex-direction: column;
         border-radius: 1rem;
+        cursor: pointer;
         
+    }
+
+    .movie_card:hover{
+        border: 1px solid var(--text);
     }
 
     .movie_card img{

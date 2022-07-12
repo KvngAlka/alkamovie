@@ -8,7 +8,6 @@
     export async function load({fetch}){
         let res = await fetch(url);
         let data = await res.json();
-        console.log("This is the whole data of popular", data)
         if(res.ok){
             return {
                 props : {
@@ -19,9 +18,6 @@
         }
         
     }
-
-
-    
 </script>
     
 
